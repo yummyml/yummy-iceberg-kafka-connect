@@ -1,0 +1,13 @@
+#!/bin/bash
+
+docker run -it --rm \
+	--name kafka \
+	--network app_default \
+	-p 9092:9092 \
+	-e KAFKA_BROKER_ID=1 \
+        -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 \
+        -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:29092,PLAINTEXT_HOST://kafka:9092 \
+        -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT \
+        -e KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT \
+        -e KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1 \
+	confluentinc/cp-kafka:7.2.0
