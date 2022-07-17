@@ -1,4 +1,5 @@
 .env
 .aws
+.ipynb_checkpoints
 kafka-connect-iceberg-sink/
 minio-data/
