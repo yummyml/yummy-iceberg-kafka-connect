@@ -23,6 +23,9 @@ spark = SparkSession.builder.config(conf=SparkConf().setAll(
 )).getOrCreate()
 
 #dd = spark.sql("select * from local.mytable_dbz.debeziumcdc_postgres_public_dbz_test").collect()
-dd = spark.read.format('iceberg').load("local.mytable_dbz.debeziumcdc_postgres_public_dbz_test").toPandas()
+dd1 = spark.read.format('iceberg').load("local.mytable_dbz.debeziumcdc_postgres_public_mystats_fv1").toPandas()
+dd2 = spark.read.format('iceberg').load("local.mytable_dbz.debeziumcdc_postgres_public_mystats_fv2").toPandas()
 
-print(dd)
+print(dd1)
+print(dd2)
+print(dd1.dtypes)

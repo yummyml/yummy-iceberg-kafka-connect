@@ -1,0 +1,15 @@
+project: example_feature_repo
+registry: data/registry.db
+provider: local
+offline_store:
+  type: yummy.YummyOfflineStore
+  backend: spark
+  config:
+    spark.master: "local[*]"
+    spark.ui.enabled: "false"
+    spark.eventLog.enabled: "false"
+    spark.sql.session.timeZone: "UTC"
+    spark.sql.extensions: io.delta.sql.DeltaSparkSessionExtension
+    spark.sql.catalog.spark_catalog: org.apache.spark.sql.delta.catalog.DeltaCatalog
+online_store:
+  path: data/online_store.db
