@@ -29,3 +29,7 @@ dd2 = spark.read.format('iceberg').load("local.mytable_dbz.debeziumcdc_postgres_
 print(dd1)
 print(dd2)
 print(dd1.dtypes)
+
+
+dd = spark.sql("describe table local.mytable_dbz.debeziumcdc_postgres_public_mystats_fv1").collect()
+print(dd)

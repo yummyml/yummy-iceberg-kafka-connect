@@ -39,7 +39,7 @@ fv1 = FeatureView(
     online=True,
     input=IcebergDataSource(
             path="local.mytable_dbz.debeziumcdc_postgres_public_mystats_fv1",
-            event_timestamp_column="datetime",
+            event_timestamp_column="__source_ts",
     ),
     tags={},
 )
@@ -52,7 +52,7 @@ fv2 = FeatureView(
     online=True,
     input=IcebergDataSource(
             path="local.mytable_dbz.debeziumcdc_postgres_public_mystats_fv2",
-            event_timestamp_column="datetime",
+            event_timestamp_column="__source_ts",
     ),
     tags={},
 )
@@ -90,7 +90,7 @@ def generate_entities(size: int):
 def entity_df(size:int = 10):
     entities=generate_entities(size)
     entity_df = pd.DataFrame(data=entities, columns=['entity_id'])
-    entity_df["event_timestamp"]=datetime(2021, 10, 1, 23, 59, 42, tzinfo=timezone.utc)
+    entity_df["event_timestamp"]=datetime(2022, 7, 18, 23, 59, 42, tzinfo=timezone.utc)
     return entity_df
 
 
