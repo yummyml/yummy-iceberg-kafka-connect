@@ -29,6 +29,7 @@ features2 = [
     Feature(name="f7", dtype=ValueType.FLOAT),
     Feature(name="f8", dtype=ValueType.FLOAT),
     Feature(name="f9", dtype=ValueType.FLOAT),
+    Feature(name="y", dtype=ValueType.FLOAT),
 ]
 
 fv1 = FeatureView(
@@ -90,7 +91,7 @@ def generate_entities(size: int):
 def entity_df(size:int = 10):
     entities=generate_entities(size)
     entity_df = pd.DataFrame(data=entities, columns=['entity_id'])
-    entity_df["event_timestamp"]=datetime(2022, 7, 18, 23, 59, 42, tzinfo=timezone.utc)
+    entity_df["event_timestamp"]=datetime(2022, 7, 24, 23, 59, 42, tzinfo=timezone.utc)
     return entity_df
 
 
@@ -108,6 +109,7 @@ feature_vector = feature_store.get_historical_features(
         "debeziumcdc_postgres_public_mystats_fv2:f7",
         "debeziumcdc_postgres_public_mystats_fv2:f8",
         "debeziumcdc_postgres_public_mystats_fv2:f9",
+        "debeziumcdc_postgres_public_mystats_fv2:y",
     ], entity_df=entity_df, full_feature_names=True
 ).to_df()
 
