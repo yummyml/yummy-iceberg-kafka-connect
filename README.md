@@ -18,6 +18,7 @@ The kafka connect inegration is based on the article:
 ## Step 1
 
 Watch short introduction:
+
 [![Yummy Iceberg](https://img.youtube.com/vi/kv0iWuSf4jw/0.jpg)](https://www.youtube.com/watch?v=kv0iWuSf4jw)
 
 ## Step 2 
