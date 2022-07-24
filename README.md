@@ -19,7 +19,7 @@ The kafka connect inegration is based on the article:
 
 Watch short introduction:
 <p align="center">
-[![Yummy Iceberg](https://img.youtube.com/vi/kv0iWuSf4jw/0.jpg)](https://www.youtube.com/watch?v=kv0iWuSf4jw)
+<a href="https://www.youtube.com/watch?v=kv0iWuSf4jw"><img src="https://img.youtube.com/vi/kv0iWuSf4jw/0.jpg" alt="Yummy Iceberg"/></a>
 </p>
 
 ## Step 2 
